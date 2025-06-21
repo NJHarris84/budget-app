@@ -1,0 +1,15 @@
+version: 3
+endpoint: http://localhost:8080
+metadata_directory: metadata
+admin_secret: myadminsecretkey
+jwt_secret:
+  type: RS256
+  jwks_url: "https://your-clerk-domain.clerk.accounts.dev/.well-known/jwks.json"
+  claims_map:
+    x-hasura-allowed-roles: ["user"]
+    x-hasura-default-role: "user"
+    x-hasura-user-id:
+      path: "$.sub"
+actions:
+  kind: synchronous
+  handler_webhook_baseurl: http://localhost:3000

@@ -1,0 +1,10 @@
+table:
+  name: goal_contributions
+  schema: public
+object_relationships:
+  - name: financial_goal
+    using:
+      foreign_key_constraint_on: goal_id
+  - name: transaction
+    using:
+      foreign_key_constraint_on: transaction_id

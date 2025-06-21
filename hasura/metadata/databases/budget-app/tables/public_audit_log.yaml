@@ -1,0 +1,10 @@
+table:
+  name: audit_log
+  schema: public
+object_relationships:
+  - name: household
+    using:
+      foreign_key_constraint_on: household_id
+  - name: user
+    using:
+      foreign_key_constraint_on: user_id

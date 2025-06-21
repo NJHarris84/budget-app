@@ -1,0 +1,129 @@
+table:
+  name: households
+  schema: public
+object_relationships:
+  - name: user
+    using:
+      foreign_key_constraint_on: created_by
+array_relationships:
+  - name: audit_logs
+    using:
+      foreign_key_constraint_on:
+        column: household_id
+        table:
+          name: audit_log
+          schema: public
+  - name: bank_accounts
+    using:
+      foreign_key_constraint_on:
+        column: household_id
+        table:
+          name: bank_accounts
+          schema: public
+  - name: budget_periods
+    using:
+      foreign_key_constraint_on:
+        column: household_id
+        table:
+          name: budget_periods
+          schema: public
+  - name: calendar_events
+    using:
+      foreign_key_constraint_on:
+        column: household_id
+        table:
+          name: calendar_events
+          schema: public
+  - name: categories
+    using:
+      foreign_key_constraint_on:
+        column: household_id
+        table:
+          name: categories
+          schema: public
+  - name: categorisation_rules
+    using:
+      foreign_key_constraint_on:
+        column: household_id
+        table:
+          name: categorisation_rules
+          schema: public
+  - name: financial_goals
+    using:
+      foreign_key_constraint_on:
+        column: household_id
+        table:
+          name: financial_goals
+          schema: public
+  - name: household_members
+    using:
+      foreign_key_constraint_on:
+        column: household_id
+        table:
+          name: household_members
+          schema: public
+  - name: loans
+    using:
+      foreign_key_constraint_on:
+        column: household_id
+        table:
+          name: loans
+          schema: public
+  - name: recurring_payments
+    using:
+      foreign_key_constraint_on:
+        column: household_id
+        table:
+          name: recurring_payments
+          schema: public
+  - name: transactions
+    using:
+      foreign_key_constraint_on:
+        column: household_id
+        table:
+          name: transactions
+          schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - id
+        - name
+        - created_by
+        - created_at
+        - updated_at
+      filter:
+        household_members:
+          user:
+            clerk_user_id:
+              _eq: X-Hasura-User-Id
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        created_by:
+          _eq: X-Hasura-User-Id
+      columns:
+        - name
+        - created_by
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - name
+      filter:
+        household_members:
+          user:
+            clerk_user_id:
+              _eq: X-Hasura-User-Id
+      check:
+        household_members:
+          user:
+            clerk_user_id:
+              _eq: X-Hasura-User-Id
+delete_permissions:
+  - role: user
+    permission:
+      filter:
+        created_by:
+          _eq: X-Hasura-User-Id

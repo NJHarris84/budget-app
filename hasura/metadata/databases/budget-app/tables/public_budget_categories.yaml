@@ -1,0 +1,10 @@
+table:
+  name: budget_categories
+  schema: public
+object_relationships:
+  - name: budget_period
+    using:
+      foreign_key_constraint_on: budget_period_id
+  - name: category
+    using:
+      foreign_key_constraint_on: category_id

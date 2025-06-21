@@ -1,0 +1,10 @@
+table:
+  name: recurring_payment_transactions
+  schema: public
+object_relationships:
+  - name: recurring_payment
+    using:
+      foreign_key_constraint_on: recurring_payment_id
+  - name: transaction
+    using:
+      foreign_key_constraint_on: transaction_id

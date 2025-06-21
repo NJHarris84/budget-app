@@ -1,0 +1,10 @@
+table:
+  name: loan_schedules
+  schema: public
+object_relationships:
+  - name: loan
+    using:
+      foreign_key_constraint_on: loan_id
+  - name: loan_payment
+    using:
+      foreign_key_constraint_on: actual_payment_id

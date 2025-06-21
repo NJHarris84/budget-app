@@ -1,0 +1,3 @@
+table:
+  name: loan_summary
+  schema: public

@@ -1,0 +1,108 @@
+table:
+  name: categories
+  schema: public
+object_relationships:
+  - name: category
+    using:
+      foreign_key_constraint_on: parent_id
+  - name: household
+    using:
+      foreign_key_constraint_on: household_id
+array_relationships:
+  - name: budget_categories
+    using:
+      foreign_key_constraint_on:
+        column: category_id
+        table:
+          name: budget_categories
+          schema: public
+  - name: categories
+    using:
+      foreign_key_constraint_on:
+        column: parent_id
+        table:
+          name: categories
+          schema: public
+  - name: categorisation_rules
+    using:
+      foreign_key_constraint_on:
+        column: category_id
+        table:
+          name: categorisation_rules
+          schema: public
+  - name: recurring_payments
+    using:
+      foreign_key_constraint_on:
+        column: category_id
+        table:
+          name: recurring_payments
+          schema: public
+  - name: transactions
+    using:
+      foreign_key_constraint_on:
+        column: category_id
+        table:
+          name: transactions
+          schema: public
+select_permissions:
+  - role: user
+    permission:
+      columns:
+        - id
+        - household_id
+        - name
+        - color
+        - icon
+        - parent_id
+        - created_at
+        - updated_at
+      filter:
+        household:
+          household_members:
+            user:
+              clerk_user_id:
+                _eq: X-Hasura-User-Id
+insert_permissions:
+  - role: user
+    permission:
+      check:
+        household:
+          household_members:
+            user:
+              clerk_user_id:
+                _eq: X-Hasura-User-Id
+      columns:
+        - household_id
+        - name
+        - color
+        - icon
+        - parent_id
+update_permissions:
+  - role: user
+    permission:
+      columns:
+        - name
+        - color
+        - icon
+        - parent_id
+      filter:
+        household:
+          household_members:
+            user:
+              clerk_user_id:
+                _eq: X-Hasura-User-Id
+      check:
+        household:
+          household_members:
+            user:
+              clerk_user_id:
+                _eq: X-Hasura-User-Id
+delete_permissions:
+  - role: user
+    permission:
+      filter:
+        household:
+          household_members:
+            user:
+              clerk_user_id:
+                _eq: X-Hasura-User-Id

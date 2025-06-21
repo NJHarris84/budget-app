@@ -1,0 +1,25 @@
+table:
+  name: financial_goals
+  schema: public
+object_relationships:
+  - name: household
+    using:
+      foreign_key_constraint_on: household_id
+  - name: user
+    using:
+      foreign_key_constraint_on: user_id
+array_relationships:
+  - name: calendar_events
+    using:
+      foreign_key_constraint_on:
+        column: goal_id
+        table:
+          name: calendar_events
+          schema: public
+  - name: goal_contributions
+    using:
+      foreign_key_constraint_on:
+        column: goal_id
+        table:
+          name: goal_contributions
+          schema: public

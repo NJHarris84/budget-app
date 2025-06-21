@@ -1,0 +1,18 @@
+table:
+  name: bank_statements
+  schema: public
+object_relationships:
+  - name: bank_account
+    using:
+      foreign_key_constraint_on: bank_account_id
+  - name: user
+    using:
+      foreign_key_constraint_on: user_id
+array_relationships:
+  - name: transactions
+    using:
+      foreign_key_constraint_on:
+        column: bank_statement_id
+        table:
+          name: transactions
+          schema: public

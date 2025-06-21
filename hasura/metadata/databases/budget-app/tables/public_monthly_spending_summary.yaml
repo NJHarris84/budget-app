@@ -1,0 +1,3 @@
+table:
+  name: monthly_spending_summary
+  schema: public

@@ -1,0 +1,35 @@
+table:
+  name: loans
+  schema: public
+object_relationships:
+  - name: household
+    using:
+      foreign_key_constraint_on: household_id
+  - name: loan_type
+    using:
+      foreign_key_constraint_on: loan_type_id
+  - name: user
+    using:
+      foreign_key_constraint_on: user_id
+array_relationships:
+  - name: calendar_events
+    using:
+      foreign_key_constraint_on:
+        column: loan_id
+        table:
+          name: calendar_events
+          schema: public
+  - name: loan_payments
+    using:
+      foreign_key_constraint_on:
+        column: loan_id
+        table:
+          name: loan_payments
+          schema: public
+  - name: loan_schedules
+    using:
+      foreign_key_constraint_on:
+        column: loan_id
+        table:
+          name: loan_schedules
+          schema: public

@@ -1,0 +1,15 @@
+table:
+  name: budget_periods
+  schema: public
+object_relationships:
+  - name: household
+    using:
+      foreign_key_constraint_on: household_id
+array_relationships:
+  - name: budget_categories
+    using:
+      foreign_key_constraint_on:
+        column: budget_period_id
+        table:
+          name: budget_categories
+          schema: public
