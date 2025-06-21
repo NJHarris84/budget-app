@@ -25,7 +25,7 @@ import {
   ArrowRight,
 } from "lucide-react"
 import type { Loan, OptimizationStrategy } from "@/lib/types/loans"
-import { LoanCalculator } from "@/lib/utils/loan-calculator"
+import { LoanCalculator } from "@/components/loans/loan-calculator"
 import { format, differenceInMonths } from "date-fns"
 import Link from "next/link"
 

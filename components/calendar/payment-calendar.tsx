@@ -18,7 +18,7 @@ import {
   TrendingUp,
   CalendarIcon,
 } from "lucide-react"
-import type { PaymentEvent, PaymentCalendarView, PaymentAnomaly } from "@/lib/types/calendar"
+import type { PaymentEvent, PaymentCalendarView, PaymentAnomaly } from "@/components/ui/calendar"
 import { PaymentScheduler } from "@/lib/utils/payment-scheduler"
 import { format, startOfMonth, endOfMonth, isSameDay, addMonths, subMonths } from "date-fns"
 

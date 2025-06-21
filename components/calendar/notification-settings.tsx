@@ -11,7 +11,7 @@ import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Separator } from "@/components/ui/separator"
 import { Bell, Mail, Smartphone, Calendar, Clock, Plus, Trash2, Settings, TestTube, CheckCircle } from "lucide-react"
-import type { NotificationPreferences, ReminderTiming, GoogleCalendarConfig } from "@/lib/types/calendar"
+import type { NotificationPreferences, ReminderTiming, GoogleCalendarConfig } from "@/components/ui/calendar"
 
 interface NotificationSettingsProps {
   preferences: NotificationPreferences

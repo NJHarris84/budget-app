@@ -12,7 +12,7 @@ import type {
   NotificationPreferences,
   GoogleCalendarConfig,
   RecurringPaymentDetection,
-} from "@/lib/types/calendar"
+} from "@/components/ui/calendar"
 import type { Transaction } from "@/lib/types/transactions"
 import { PaymentScheduler } from "@/lib/utils/payment-scheduler"
 import { NotificationService } from "@/lib/services/notification-service"

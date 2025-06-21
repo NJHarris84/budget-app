@@ -25,7 +25,7 @@ import {
   CheckCircle,
 } from "lucide-react"
 import type { Loan, LoanType, PaymentFrequency, PaymentType } from "@/lib/types/loans"
-import { LoanCalculator } from "@/lib/utils/loan-calculator"
+import { LoanCalculator } from "@/components/loans/loan-calculator"
 import { format } from "date-fns"
 
 interface LoanSetupWizardProps {

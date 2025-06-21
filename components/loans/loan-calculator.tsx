@@ -13,7 +13,7 @@ import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, BarChart, Bar } from "recharts"
 import { Calculator, TrendingDown, Calendar, DollarSign, Target, Lightbulb } from "lucide-react"
 import type { LoanCalculatorInput, PaymentFrequency } from "@/lib/types/loans"
-import { LoanCalculator } from "@/lib/utils/loan-calculator"
+import { LoanCalculator } from "@/components/loans/loan-calculator"
 import { format } from "date-fns"
 
 export function LoanCalculatorComponent() {

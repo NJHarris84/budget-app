@@ -1,6 +1,3 @@
-// Note: This is a simplified OCR implementation
-// In production, you'd use services like AWS Textract, Google Vision API, or Tesseract.js
-
 export interface OCRResult {
   text: string
   confidence: number

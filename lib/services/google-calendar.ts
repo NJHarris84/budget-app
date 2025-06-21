@@ -1,4 +1,4 @@
-import type { PaymentEvent, GoogleCalendarConfig } from "@/lib/types/calendar"
+import type { PaymentEvent, GoogleCalendarConfig } from "@/components/ui/calendar"
 
 export class GoogleCalendarService {
   private config: GoogleCalendarConfig

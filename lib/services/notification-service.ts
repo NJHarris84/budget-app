@@ -1,4 +1,4 @@
-import type { PaymentEvent, NotificationPreferences, ReminderTiming } from "@/lib/types/calendar"
+import type { PaymentEvent, NotificationPreferences, ReminderTiming } from "@/components/ui/calendar"
 import { format, addMinutes, addHours, addDays, addWeeks } from "date-fns"
 
 export class NotificationService {

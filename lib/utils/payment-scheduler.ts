@@ -7,7 +7,7 @@ import type {
   PaymentScheduleRecommendation,
   RecurringPaymentDetection,
   PaymentCalendarView,
-} from "@/lib/types/calendar"
+} from "@/components/ui/calendar"
 import type { Transaction } from "@/lib/types/transactions"
 import { addDays, addWeeks, addMonths, addYears, isSameDay, differenceInDays, format, startOfMonth } from "date-fns"
 
